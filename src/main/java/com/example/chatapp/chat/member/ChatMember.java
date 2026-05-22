@@ -18,10 +18,10 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "chat_members",
         uniqueConstraints = {
-                @UniqueConstraint(name = "uk_chat_members_chatroom_user", columnNames = {"chat_room_id", "user_id"}), //현재 방의 멤버 찾기
+                @UniqueConstraint(name = "uk_chat_members_chat_room_id_user_id", columnNames = {"chat_room_id", "user_id"}), //현재 방의 멤버 찾기
         },
         indexes = {
-                @Index(name = "idx_chat_members_user_active", columnList = "user_id, active") // 사용자가 참여중인 방 조회
+                @Index(name = "idx_chat_members_user_id_active", columnList = "user_id, active") // 사용자가 참여중인 방 조회
         }
 )
 @Getter

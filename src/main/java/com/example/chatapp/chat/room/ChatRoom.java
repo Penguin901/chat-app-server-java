@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "chat_rooms",
         uniqueConstraints = {
-                @UniqueConstraint(name = "uk_chat_rooms_pair", columnNames = {"direct_room_key"}) // 동일유저간 방 중복생성 방지
+                @UniqueConstraint(name = "uk_chat_rooms_direct_room_key", columnNames = {"direct_room_key"}) // 동일유저간 방 중복생성 방지
         }
 )
 @Getter
