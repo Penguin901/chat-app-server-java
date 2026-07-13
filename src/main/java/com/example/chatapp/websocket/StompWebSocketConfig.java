@@ -23,8 +23,8 @@ public class StompWebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/sub");// 서버 -> 클라이언트
-        config.setApplicationDestinationPrefixes("/pub");//클라이언트 -> 서버
+        config.enableSimpleBroker("/topic");// 서버 -> 클라이언트
+        config.setApplicationDestinationPrefixes("/app");//클라이언트 -> 서버
     }
 
     @Override

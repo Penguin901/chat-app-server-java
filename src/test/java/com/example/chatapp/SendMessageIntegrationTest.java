@@ -80,7 +80,7 @@ class SendMessageIntegrationTest {
         ArgumentCaptor<SendMessageResponse> chatMessageEventArgumentCaptor = ArgumentCaptor.forClass(SendMessageResponse.class);
 
         verify(simpMessagingTemplate).convertAndSend(
-                eq("/sub/chatroom/" + createChatRoomResponse.id()),
+                eq("/topic/chatroom/" + createChatRoomResponse.id()),
                 chatMessageEventArgumentCaptor.capture()
         );
 

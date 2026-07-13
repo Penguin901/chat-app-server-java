@@ -45,7 +45,7 @@ public class User {
 
     // 프로필 정보
     @Column(length = 20)
-    private String nickname;  //빈 문자열로 초기화. 이후 이름 설정 화면에서 값 저장
+    private String nickname;  //null로 초기화. 이후 이름 설정 화면에서 값 저장
 
     private String bio; //상태메세지
 

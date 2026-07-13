@@ -30,12 +30,13 @@ public class ChatMessageController {
         return chatMessageService.getChatMessages(currentUserId, chatRoomId);
     }
 
+    // 다른 클래스로 분리 필요
     @MessageMapping("message")
     public void sendMessage(Authentication authentication, @Payload SendMessageRequest request) {
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
         SendMessageResponse event = chatMessageUseCase.handleSendMessage(userPrincipal.userId(), request);
         simpMessagingTemplate.convertAndSend(
-                "/sub/chatroom/" + request.chatRoomId(),
+                "/topic/chatroom/" + request.chatRoomId(),
                 event
         );
     }
